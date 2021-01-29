@@ -4,7 +4,7 @@
 
 //'use strict';
 
-// 2. Variable
+// 2. Variable, rw(read/write)
 // let (added in ES6)
 console.log(age)
 
@@ -44,7 +44,11 @@ let age1;
 }
 console.log(age2)
 
-// 3. Constants
+// 3. Constants, r(read only)
+
+// Note!
+// Immutable data types: premitive types, frozen objects (i.e. object.freeze())
+// Mutable data types: all objects by default are mutable in JS
 // favor immutable data type always for a few reasons:
 // - security
 // - thread safety
@@ -52,8 +56,8 @@ console.log(age2)
 const daysInWeek = 7;
 const maxNumber = 5;
 
-// 4. Variable types 
-// prmitive, single item: number, string, boolean, null, undefine, symbol 
+// 4. Variable types, rw(read/write)
+// primitive, single item: number, string, boolean, null, undefine, symbol 
 // object, box container
 // function, first-class function
 

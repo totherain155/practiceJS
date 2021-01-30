@@ -47,7 +47,7 @@ const value1 = false;
 const value2 = 4 < 2;
 
 // || (or)
-console.log(`or: ${value || value2 || check()}`);
+console.log(`or: ${value1 || value2 || check()}`);
 
 
 
@@ -60,9 +60,12 @@ console.log(`and: ${value1 && value2 && check()}`);
 
 // often used to compare long if-statement
 // nullableObject && nullableObject.something
+
+/*
 if (nullableObject !== null) {
     nullableObject.something;
 }
+*/
 
 function check() {
     for (let i = 0; i < 10; i++) {
@@ -98,3 +101,103 @@ const totherain3 = totherain1;
 console.log(totherain1 == totherain2); // false (각각 다른 reference가 저장되어 있다. )
 console.log(totherain1 === totherain2) // false (똑같은 type이든 아니든 reference 값이 역시 다르기 때문에 false이다. )
 console.log(totherain1 === totherain3) // true (totherain1이 갖고 있는 reference value를 3으로 할당했기 때문에 같은 reference를 갖고 있다. )
+
+
+// equality - puzzler 
+console.log(0 == false) // true
+console.log(0 === false) // false (0은 boolean type이 아니기 때문에 )
+console.log('' == false) // true
+console.log('' === false) // false (empty 문자열은 boolean type이 아니다.)
+console.log(null == undefined) // true
+console.log(null === undefined) // false (null과 undefined는 다른 type이다.)
+
+// 8. Conditional operator 
+// if, else if, else
+const name1 = 'coder';
+if (name1 === 'totherain') {
+    console.log('Welcone !')
+} else if (name1 === 'coder') {
+    console.log('you are amazing coder')
+} else {
+    console.log('unknown')
+}  // 'you are amazing coder'
+
+// 9. Ternary operator: ?
+// condition ? value1 : value2;
+console.log(name1 === 'totherain' ? 'yes' : 'no')
+// no
+
+// 10. Switch statement
+// use for multiple if checks 
+// use for enum - like value check
+// use for multiple type checks in TS
+const browser = 'IE';
+switch (browser) {
+    case 'IE':
+        console.log('go away!');
+        break;
+    case 'Chrome':
+    case 'Firefox':
+        console.log('like you!');
+        break;
+    default:
+        console.log('same all!');
+        break;
+} // go away!
+
+
+
+// 11. Loops
+// while loop, while the condition is truthy,
+// body code is executed.
+let i = 3;
+while (i > 0) {
+    console.log(`while: ${i}`);
+    i--
+}
+
+// do while loop, body code is executed first,
+// then check the condition.
+do {
+    console.log(`do while: ${i}`)
+    i--;
+} while (i > 0)
+
+// for loop, for(begin; condition; step)
+for (i = 3; i > 0; i--) {
+    console.log(`for: ${i}`);
+}
+
+
+for (let i = 3; i > 0; i = i - 2) {
+    // inline variable declaration
+    console.log(`inline variable for: ${i}`);
+}
+
+// nested loops
+for (let i = 0; i < 10; i++) {
+    for (let j = 0; j < 10; j++) {
+        console.log(`i: ${i}, j:${j}`);
+    }
+}
+
+// break, continue
+// Q1. iterate from 0 to 10 and print only even numbers 
+// (use continue)
+
+for (i = 0; i <= 10; i++) {
+    if (i % 2 !== 0) {
+        continue;
+    }
+    console.log(`Q1: ${i}`)
+}
+
+
+// Q2. iterate from 0 to 10 and print numbers until 
+// reaching 8 (use break)
+for (i = 0; i <= 10; i++) {
+    if (i > 8) {
+        break;
+    }
+    console.log(`Q2: ${i}`)
+}

@@ -167,13 +167,36 @@ const calculate = {
     multiply: function (a, b) {
         return a * b;
     },
-    remainder: function (a, b) {
+    divide: function (a, b) {
         return a / b;
+    },
+    remainder: function (a, b) {
+        return a % b;
     }
 }
 const add1 = calculate.add(3, 5);
 const substract1 = calculate.substract(5, 3);
 const multiply1 = calculate.multiply(3, 5);
-const remainder1 = calculate.remainder(6, 3);
+const divide1 = calculate.divide(6, 3);
+const remainder1 = calculate.remainder(7, 3);
 
-console.log(add1, substract1, multiply1, remainder1)
+
+console.log(add1, substract1, multiply1, divide1, remainder1)
+
+// switch 이용하여 calculator 작성 
+function caclulator(command, a, b) {
+    switch (command) {
+        case add:
+            return a + b
+        case minus:
+            return a - b
+        case multi:
+            return a * b;
+        case divide:
+            return a / b;
+        default:
+            throw Error('wrong order')
+
+    }
+}
+console.log(caclulator('divide', 5, 3))

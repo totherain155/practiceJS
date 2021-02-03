@@ -2,7 +2,7 @@
 // added in ES 5
 // use this for Vanilla Javscript.
 
-//'use strict';
+// 'use strict';
 
 // 2. Variable, rw(read/write)
 // let (added in ES6)

@@ -85,6 +85,29 @@ const students = [
     console.log(result)
 
 
-    const result1 = students.every(item => item.score < 50);
-    console.log(result1);
+    const result1 = !students.every(item => item.score >= 50);
+    console.log(result1);  // 모든 item을 체크하여 boolean값으로 return 
 }
+
+// Q9. compute students' average score 
+{
+    const result = students.reduce((prev, current) => prev + current.score, 0)
+    console.log(result / students.length)
+}
+
+// Q10. make a string containing all the scores 
+// result should be : '45, 80, 90, 67, 88'
+{
+    const result = students.map(item => item.score)
+    // console.log(result.toString())
+    console.log(result.join())
+
+}
+
+// Bonus! do Q10 sorted in ascending order
+// result should be: '45, 67, 70, 88, 90'
+
+{
+    const result = students.map(item => item.score).sort((a, b) => a - b).join()
+    console.log(result)
+} 

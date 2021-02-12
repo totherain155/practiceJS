@@ -36,7 +36,8 @@ const id = prompt('enter your id');
 const password = prompt('enter your password')
 userStorage.loginUser(id, password)
     .then(userStorage.getRoles)
-    .then(user => alert(`Hi ${user.name}, you are ${user.role}`))
+    .then(user => alert
+        (`Hi ${user.name}, you are ${user.role}`))
     .catch(console.log)
 
 

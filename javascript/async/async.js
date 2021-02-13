@@ -36,7 +36,7 @@ function getBanana() {
 }
 */
 
-
+/*
 function pickFruits() {
     return getApple()
         .then(apple => {
@@ -44,19 +44,29 @@ function pickFruits() {
                 .then(banana => `${apple} + ${banana}`)
         })
 }
+*/
+/*
+async function pickFruits() {
+
+    const apple = await getApple()
+    const banana = await getBanana()
+
+    return `${apple} + ${banana}`
+}
+*/
 
 /*
 async function pickFruits() {
     const applePromise = getApple()
     const bananaPromise = getBanana()
-    const apple = await applePromise
-    const banana = await bananaPromise
+    const apple = await applePromise;
+    const banana = await bananaPromise;
     return `${apple} + ${banana}`
 }
-*/
+
 
 pickFruits().then(console.log)
-
+*/
 
 /*
 // 3. useful Promise APIs
@@ -65,10 +75,11 @@ function pickAllFruits() {
         .then(fruits => fruits.join(' + '))
 }
 pickAllFruits().then(console.log)
+*/
+
 
 function pickOnlyOne() {
     return Promise.race([getApple(), getBanana()])
 }
 
 pickOnlyOne().then(console.log)
-*/
